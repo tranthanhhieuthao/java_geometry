@@ -1,4 +1,6 @@
-public class Circle extends Shape {
+import java.util.Arrays;
+
+public class Circle extends Shape implements Comparator  {
     private double radius =1.0;
 
     public Circle(){
@@ -38,6 +40,16 @@ public class Circle extends Shape {
                 +"Which is a subclass of "
                 +super.toString();
     }
+
+    @Override
+    public double compare(Circle c1, Circle c2) {
+        if (c1.getRadius() > c2.getRadius()) return 1;
+        else if (c1.getRadius() < c2.getRadius()) return -1;
+        else return 0;
+    }
+
+
+
     public static void main(String[] args) {
         Circle circle = new Circle();
         System.out.println(circle);
@@ -47,6 +59,23 @@ public class Circle extends Shape {
 
         circle = new Circle( "indigo", false ,3.5);
         System.out.println(circle);
+
+        Comparator comparator = new Circle();
+
+            Circle[] circles = new Circle[3];
+            circles[0] = new Circle(3.6);
+            circles[1] = new Circle();
+            circles[2] = new Circle( "indigo", false,3.5);
+
+            System.out.println("Pre-sorted:");
+            for (int i=0;i<circles.length;i++) {
+                System.out.println(circles[i].getRadius());
+            }
+
+        System.out.println("compare: ");
+        System.out.println( comparator.compare(circles[0],circles[1]));
+
+
     }
 
 }

@@ -1,4 +1,4 @@
-public class Rectangle extends Shape {
+public class Rectangle extends Shape implements ComparatorRec {
     private double width =1.0;
     private double length =1.0;
 
@@ -54,6 +54,15 @@ public class Rectangle extends Shape {
                 +"Which is a subclass of"
                 +super.toString();
     }
+
+    @Override
+    public double compare(Rectangle c1,Rectangle c2){
+        if (c1.getWidth() > c2.getLength()) return 1;
+        else if (c1.getWidth() < c2.getLength()) return -1;
+        else return 0;
+    }
+
+
     public static void main(String[] args) {
         Rectangle rectangle = new Rectangle();
         System.out.println(rectangle);
