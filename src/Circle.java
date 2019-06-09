@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Circle extends Shape implements Comparator  {
+public class Circle extends Shape   {
     private double radius =1.0;
 
     public Circle(){
@@ -40,16 +40,6 @@ public class Circle extends Shape implements Comparator  {
                 +"Which is a subclass of "
                 +super.toString();
     }
-
-    @Override
-    public double compare(Circle c1, Circle c2) {
-        if (c1.getRadius() > c2.getRadius()) return 1;
-        else if (c1.getRadius() < c2.getRadius()) return -1;
-        else return 0;
-    }
-
-
-
 
 
 }
