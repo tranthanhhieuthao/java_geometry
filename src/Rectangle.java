@@ -24,9 +24,11 @@ public class Rectangle extends Shape {
         return this.length;
     }
 
+
     public void setWidth(double width){
         this.width =width;
     }
+
 
     public void setLength(double length){
         this.length =length;
